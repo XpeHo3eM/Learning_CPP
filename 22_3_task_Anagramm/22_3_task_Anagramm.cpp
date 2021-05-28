@@ -4,7 +4,7 @@
 
 
 std::string enterWord ();
-void decomposeWordToCharacters(std::string&, std::map<char, int>&);
+std::map<char, int> decomposeWordToMap(std::string&);
 
 
 int main()
@@ -16,28 +16,10 @@ int main()
 
   if (word1.size() == word2.size())
   {
-    std::map <char, int> firstWordCharacters;
-    std::map <char, int> secondWordCharacters;
-    decomposeWordToCharacters (word1, firstWordCharacters );
-    decomposeWordToCharacters (word2, secondWordCharacters);
+    std::map <char, int> firstWordCharacters  = decomposeWordToMap (word1);
+    std::map <char, int> secondWordCharacters = decomposeWordToMap (word2);
 
-    std::map <char, int>::iterator itw1 =  firstWordCharacters.begin();
-    std::map <char, int>::iterator itw2 = secondWordCharacters.begin();
-
-    bool mistmatch = false;
-    while (!mistmatch && itw1 != firstWordCharacters.end())
-    {
-      if (itw1->first == itw2->first &&
-          itw1->second == itw2->second)
-      {
-        ++itw1;
-        ++itw2;
-      }
-      else
-        mistmatch = true;
-    }
-
-    if (!mistmatch)
+    if (firstWordCharacters == secondWordCharacters)
       std::cout << "~ This word are anagramm ~" << std::endl;
     else
       std::cout << "~ This word are not anagramm ~" << std::endl;
@@ -48,17 +30,13 @@ int main()
 
 
 
-void decomposeWordToCharacters(std::string &str, std::map<char, int> &wMap)
+std::map <char, int> decomposeWordToMap(std::string &str)
 {
-  std::map <char, int>::iterator itf;
-  for (int i = 0; i < str.size(); ++i)
-  {
-    itf = wMap.find(str[i]);
-    if (itf == wMap.end())
-      wMap.insert(std::pair<char, int> (str[i], 1));
-    else
-      ++itf->second;
-  }
+  std::map <char, int> mapTmp;
+  for (const char ch : str)
+    mapTmp[ch] += 1;
+
+  return mapTmp;
 }
 
 
