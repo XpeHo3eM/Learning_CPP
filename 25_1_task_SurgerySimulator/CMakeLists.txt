@@ -1,5 +1,7 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
-project ("25_1_task_SurgerySimulator")
+project ("25_1_task_SurgerySimulator" VERSION 1.0)
 
-add_executable (25_1_task_SurgerySimulator "main.cpp" "instruments.h" "dot.h")
+set(MY_INCLUDE_PATH ${CMAKE_SOURCE_DIR}/include)
+
+add_subdirectory(src)
