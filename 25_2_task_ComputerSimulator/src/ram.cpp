@@ -1,7 +1,7 @@
 #include "const.h"
 
 
-extern int *ram;
+int *ram = new int[g_size] { 0 };
 
 
 void ramWrite (int *buf)

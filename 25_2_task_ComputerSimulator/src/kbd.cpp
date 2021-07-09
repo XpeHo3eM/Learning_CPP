@@ -29,13 +29,13 @@ void enterNumbers ()
         {
             *(tmp + i) = std::stoi (str);
             ++i;
+            std::cout << g_size - i << " numbers left to enter" << std::endl;
         }
     }
     ramWrite (tmp);
+    system ("cls");
+    std::cout << "~ Data was written on RAM ~" << std::endl << std::endl;
 
     delete[] tmp;
     tmp = nullptr;
 }
-
-
-

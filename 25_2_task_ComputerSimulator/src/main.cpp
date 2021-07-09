@@ -1,19 +1,12 @@
 ﻿#include <iostream>
 #include "pc.h"
 #include "const.h"
-
-
-bool isCorrectCommand (std::string &enteredCommand);
+#include <map>
 
 
 class Pc
 {
 public: 
-    Pc ()
-    {
-        ram = new int[g_size];
-    }
-
     void sum ()
     {
         print ();
@@ -39,20 +32,12 @@ public:
     {
         print ();
     }
-
-    ~Pc ()
-    {
-        delete[] ram;
-        ram = nullptr;
-    }
-
-private:
-    int *ram;
 };
 
 
 
-std::string commands[] {"sum", "save", "load", "input", "display", "exit"};
+std::map <std::string, int> commands {{"sum", 0},   {"save", 1},    {"load", 2},
+                                      {"input", 3}, {"display", 4}, {"exit", 5}};
 
 
 int main()
@@ -63,18 +48,22 @@ int main()
     {
         std::cout << "Enter command: " << std::endl;
         for (const auto c : commands)
-            std::cout << " - " << c << std::endl;
+            std::cout << " - " << c.first << std::endl;
 
         std::string enteredCommand;
+        std::map <std::string, int>::iterator itc;
         do
+        {
             std::cin >> enteredCommand;
-        while (!isCorrectCommand (enteredCommand));
+            itc = commands.find (enteredCommand);
+            if (itc == commands.end ())
+                std::cout << "! Incorrect command. Try again !" << std::endl;
+        }
+        while (itc == commands.end());
 
-        int c = 0;
-        while (enteredCommand != commands[c])
-            ++c;
+        system ("cls");
 
-        switch (c)
+        switch (itc->second)
         {
         case 0: pc.sum();       break;
         case 1: pc.save ();     break;
@@ -88,14 +77,4 @@ int main()
             break;
         }
     }
-}
-
-
-bool isCorrectCommand (std::string &enteredCommand)
-{
-    for (int i = 0; i < commands->size (); ++i)
-        if (enteredCommand == commands[i])
-            return true;
-
-    return false;
 }
