@@ -4,35 +4,40 @@
 #include <map>
 
 
-class Pc
+
+void sum ()
 {
-public: 
-    void sum ()
-    {
-        print ();
-        print (compute ());
-    }
+    print ();
+    print (compute ());
+}
 
-    void save ()
-    {
-        saveToFileFromRam ();
-    }
 
-    void load ()
-    {
-        loadFromFileToRam ();
-    }
 
-    void input ()
-    {
-        enterNumbers ();
-    }
+void save ()
+{
+    saveToFileFromRam ();
+}
 
-    void display ()
-    {
-        print ();
-    }
-};
+
+
+void load ()
+{
+    loadFromFileToRam ();
+}
+
+
+
+void input ()
+{
+    enterNumbers ();
+}
+
+
+
+void display ()
+{
+    print ();
+}
 
 
 
@@ -42,7 +47,6 @@ std::map <std::string, int> commands {{"sum", 0},   {"save", 1},    {"load", 2},
 
 int main()
 {
-    Pc pc;
     bool exit = false;
     while (!exit)
     {
@@ -65,11 +69,11 @@ int main()
 
         switch (itc->second)
         {
-        case 0: pc.sum();       break;
-        case 1: pc.save ();     break;
-        case 2: pc.load ();     break;
-        case 3: pc.input ();    break;
-        case 4: pc.display ();  break;
+        case 0: sum();       break;
+        case 1: save ();     break;
+        case 2: load ();     break;
+        case 3: input ();    break;
+        case 4: display ();  break;
         case 5: exit = true;    break;
         default: 
             std::cout << "! Incorrect command !" << std::endl;
