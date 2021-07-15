@@ -1,4 +1,4 @@
 #pragma once
 
-extern const int g_size;
-extern const char *filePath;
+// Количество входящих целочисленных чисел и размер ОЗУ
+constexpr int g_size {8};

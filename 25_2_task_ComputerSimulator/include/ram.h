@@ -1,4 +1,4 @@
 #pragma once
 
 void ramWrite (int *buf);
-int* ramRead ();
+void ramRead (int *buf);

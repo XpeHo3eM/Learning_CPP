@@ -12,7 +12,8 @@ void ramWrite (int *buf)
 
 
 
-int* ramRead ()
+void ramRead (int *buf)
 {
-    return ram;
+    for (int i = 0; i < g_size; ++i)
+        *(buf + i) = *(ram + i);
 }

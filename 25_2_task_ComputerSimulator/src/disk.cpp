@@ -7,12 +7,16 @@
 
 void saveToFileFromRam ()
 {
-    int *tmp = ramRead ();
-    std::ofstream file (filePath);
+    int *tmp = new int[g_size];
+    ramRead (tmp);
+    std::ofstream file ("data.txt");
     for (int i = 0; i < g_size; ++i)
         file << *(tmp + i) << " ";
     file.close ();
     std::cout << "~ RAM was saved on disk ~" << std::endl << std::endl;
+
+    delete[] tmp;
+    tmp = nullptr;
 }
 
 
@@ -20,7 +24,7 @@ void saveToFileFromRam ()
 void loadFromFileToRam ()
 {
     int *tmp = new int[g_size];
-    std::ifstream file (filePath);
+    std::ifstream file ("data.txt");
     if (file.is_open ())
     {
         for (int i = 0; i < g_size; ++i)
