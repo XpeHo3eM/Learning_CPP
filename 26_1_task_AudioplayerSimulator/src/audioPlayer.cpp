@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <map>
-#include <iomanip>
+#include <ctime>
 #include "audioPlayer.h"
 #include "clear.h"
 
@@ -17,7 +17,6 @@ void AudioPlayer::addTrack ()
     clear ();
     
     Track newTrack;
-
     std::string name;
     newTrack.getName (name);
 
@@ -43,17 +42,18 @@ void AudioPlayer::play (std::string name)
         {
             std::string trackName;
             Date trackCreatedTime;
-            int trackDuration;
-            itf->second.getName        (trackName);
-            itf->second.getCreatedTime (trackCreatedTime);
-            itf->second.getDuration    (trackDuration);
+            std::string durationPrint;
+            itf->second.getName            (trackName);
+            itf->second.getCreatedTime     (trackCreatedTime);
+            itf->second.getDurationToPrint (durationPrint);
             
             std::string datePrint;
             trackCreatedTime.getDateToPrint (datePrint);
+            
             std::cout << "~ Track play ~" << std::endl;
             std::cout << "  name:     "   << trackName     << std::endl;
             std::cout << "  date:     "   << datePrint     << std::endl;
-            std::cout << "  duration: "   << trackDuration << " sec" << std::endl << std::endl;
+            std::cout << "  duration: "   << durationPrint << std::endl << std::endl;
 
             lastTrackPlay = trackName;
             isPlay = true;
@@ -86,10 +86,17 @@ void AudioPlayer::next ()
 
     if (tracks.begin () != tracks.end ())
     {
+        isPlay = false;
         std::srand (std::time (nullptr));
-        uint16_t randNo = std::rand () % (tracks.size ());
-        std::map <std::string, Track>::iterator itn = std::next (tracks.begin (), randNo);
-        std::string randTrack = itn->first;
+        std::string randTrack;
+        do
+        {
+            uint16_t randNo = std::rand () % (tracks.size ());
+            std::map <std::string, Track>::iterator itn = std::next (tracks.begin (), randNo);
+            randTrack = itn->first;
+        }
+        while (lastTrackPlay == randTrack);
+        
         play (randTrack);
     }
     else

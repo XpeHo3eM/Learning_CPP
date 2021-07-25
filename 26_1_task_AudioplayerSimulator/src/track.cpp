@@ -47,7 +47,7 @@ void Track::getCreatedTime (Date &createdTime)
 }
 
 
-void Track::getDuration (int &duration)
+void Track::getDuration (uint16_t &duration)
 {
     duration = this->duration;
 }
@@ -66,4 +66,13 @@ bool Track::isCorrectDuration (std::string &duration)
     uint16_t timing = min * 60 + sec;
 
     return (timing > 0);
+}
+
+
+void Track::getDurationToPrint (std::string &duration)
+{
+    uint16_t sec = this->duration % 60;
+    uint16_t min = this->duration / 60;
+
+    duration = std::to_string (min) + ":" + std::to_string (sec);
 }
