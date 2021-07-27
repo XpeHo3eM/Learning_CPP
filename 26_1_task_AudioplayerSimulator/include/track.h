@@ -6,10 +6,10 @@ class Track
 {
 public:
     Track ();
-    void getName (std::string &name);
-    void getCreatedTime (Date &createdTime);
-    void getDuration (uint16_t &duration);
-    void getDurationToPrint (std::string &duration);
+    std::string getName ()        { return name; };
+    Date        getCreatedTime () { return createdTime; };
+    uint16_t    getDuration ()    { return duration; };
+    std::string getDurationToPrint ();
 
 private:
     std::string name;

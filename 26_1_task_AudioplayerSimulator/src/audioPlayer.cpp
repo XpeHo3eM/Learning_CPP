@@ -17,8 +17,7 @@ void AudioPlayer::addTrack ()
     clear ();
     
     Track newTrack;
-    std::string name;
-    newTrack.getName (name);
+    std::string name = newTrack.getName ();
 
     clear ();
     if (tracks.find (name) == tracks.end ())
@@ -40,15 +39,10 @@ void AudioPlayer::play (std::string name)
         std::map <std::string, Track>::iterator itf = tracks.find (name);
         if (itf != tracks.end ())
         {
-            std::string trackName;
-            Date trackCreatedTime;
-            std::string durationPrint;
-            itf->second.getName            (trackName);
-            itf->second.getCreatedTime     (trackCreatedTime);
-            itf->second.getDurationToPrint (durationPrint);
-            
-            std::string datePrint;
-            trackCreatedTime.getDateToPrint (datePrint);
+            std::string trackName     = itf->second.getName();
+            Date trackCreatedTime     = itf->second.getCreatedTime ();
+            std::string durationPrint = itf->second.getDurationToPrint();
+            std::string datePrint     = trackCreatedTime.getDateToPrint ();
             
             std::cout << "~ Track play ~" << std::endl;
             std::cout << "  name:     "   << trackName     << std::endl;

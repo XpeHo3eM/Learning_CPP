@@ -8,7 +8,6 @@
 
 Track::Track ()
 {
-    std::string name;
     std::cout << "Enter track's name: ";
     std::getline (std::cin, name);
     
@@ -27,30 +26,9 @@ Track::Track ()
     }
     uint16_t min      = std::stoi (timing.substr (0, 2));
     uint16_t sec      = std::stoi (timing.substr (3, 2));
-    uint16_t duration = min * 60 + sec;
-
-    
-    this->duration    = duration;
-    this->name        = name;
+    duration          = min * 60 + sec;
 }
 
-
-void Track::getName (std::string &name)
-{
-    name = this->name;
-}
-
-
-void Track::getCreatedTime (Date &createdTime)
-{
-    createdTime = this->createdTime;
-}
-
-
-void Track::getDuration (uint16_t &duration)
-{
-    duration = this->duration;
-}
 
 
 bool Track::isCorrectDuration (std::string &duration)
@@ -69,10 +47,20 @@ bool Track::isCorrectDuration (std::string &duration)
 }
 
 
-void Track::getDurationToPrint (std::string &duration)
+std::string Track::getDurationToPrint ()
 {
-    uint16_t sec = this->duration % 60;
-    uint16_t min = this->duration / 60;
+    uint16_t sec = duration % 60;
+    uint16_t min = duration / 60;
+    std::string mPrint = "";
+    std::string sPrint = "";
 
-    duration = std::to_string (min) + ":" + std::to_string (sec);
+    if (min < 10)
+        mPrint += "0";
+    mPrint += std::to_string(min);
+
+    if (sec < 10)
+        sPrint += "0";
+    sPrint += std::to_string (sec);
+
+    return (mPrint + ":" + sPrint);
 }

@@ -55,7 +55,28 @@ bool Date::isCorrectDate (std::string &date)
 }
 
 
-void Date::getDateToPrint (std::string &date)
+std::string Date::getDateToPrint ()
 {
-    date = std::to_string (day) + "/" + std::to_string(month) + "/" + std::to_string(year);
+    std::string dPrint = "";
+    std::string mPrint = "";
+    std::string yPrint = "";
+
+    if (day < 10)
+        dPrint += "0";
+    dPrint += std::to_string (day);
+
+    if (month < 10)
+        mPrint += "0";
+    mPrint += std::to_string (month);
+
+    uint16_t tmpYear = year;
+    for (uint16_t i = 0; i < 4; ++i)
+    {
+        if (tmpYear == 0)
+            yPrint += "0";
+        tmpYear /= 10;
+    }
+    yPrint += std::to_string (year);
+        
+    return (dPrint + "/" + mPrint + "/" + yPrint);
 }
