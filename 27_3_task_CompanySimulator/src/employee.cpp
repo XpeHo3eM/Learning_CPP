@@ -32,13 +32,8 @@ void Employee::setTask ()
     if (this->task == NONE)
     {
         int task = rand () % AMOUNT_TASK;
-        switch (task)
-        {
-        case A: this->task = A; break;
-        case B: this->task = B; break;
-        case C: this->task = C; break;
-        }
-    }    
+        this->task = static_cast<Task>(task);
+    }
 }
 
 
