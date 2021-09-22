@@ -9,17 +9,16 @@
 
 
 
-static std::vector <std::string> totalReq;
-static std::vector <std::string> totalReqValue;
+static std::vector <cpr::Pair> pairs;
 
 
 void requestGet ()
 {
     std::string args = "?";
-    for (int i = 0; i < totalReq.size (); ++i)
+    for (int i = 0; i < pairs.size (); ++i)
     {
-        args += totalReq[i] + "=" + totalReqValue[i];
-        if (i + 1 < totalReq.size ())
+        args += pairs[i].key + "=" + pairs[i].value;
+        if (i + 1 < pairs.size ())
             args += "&";
     }
 
@@ -33,10 +32,10 @@ void requestGet ()
 void requestPost ()
 {
     std::string args = "";
-    for (int i = 0; i < totalReq.size (); ++i)
+    for (int i = 0; i < pairs.size (); ++i)
     {
-        args += totalReq[i] + " " + totalReqValue[i];
-        if (i + 1 < totalReq.size ())
+        args += pairs[i].key + " " + pairs[i].value;
+        if (i + 1 < pairs.size ())
             args += " ";
     }
 
@@ -48,9 +47,7 @@ void requestPost ()
 
 
 void getTotalRequest ()
-{
-
-    std::string req = "";
+{   
     bool exit = false;
     do
     {
@@ -64,12 +61,11 @@ void getTotalRequest ()
         if (countSpace == 1)
         {
             size_t space = entered.find (' ');
-            req = entered.substr (0, space);
+            std::string req = entered.substr (0, space);
             std::string value = entered.substr (space + 1, entered.size () - space);
             if (req != "" && value != "" && req != "post" && req != "get")
             {
-                totalReq.push_back (req);
-                totalReqValue.push_back (value);
+                pairs.push_back (cpr::Pair(entered.substr (0, space), entered.substr (space + 1, entered.size() - space)));
                 std::cout << "~ Request witch value was added ~" << std::endl;
             }
             else
