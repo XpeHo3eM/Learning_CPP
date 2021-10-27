@@ -7,13 +7,18 @@
 class SharedPtrToy
 {
 public:
-    SharedPtrToy (std::string inToy);
+    SharedPtrToy () {};
     SharedPtrToy (const SharedPtrToy& other);
     SharedPtrToy& operator= (const SharedPtrToy& other);
+    ~SharedPtrToy ();
     void clear ();
+
+    void setObj (Toy* inToy);
+    void setRef (int* inCountRef);
  
 private:
-    std::shared_ptr<Toy> obj;
+    Toy* obj      = nullptr;
+    int* countRef = nullptr;
 };
 
 

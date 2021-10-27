@@ -4,16 +4,28 @@
 
 
 
-SharedPtrToy::SharedPtrToy (std::string inToy)
+void SharedPtrToy::clear ()
 {
-    obj = std::make_shared<Toy> (inToy);
+    if (obj != nullptr)
+    {
+        --(*countRef);
+        if (*countRef == 0)
+        {
+            delete obj;
+            delete countRef;
+        }
+    }
+    obj      = nullptr;
+    countRef = nullptr;
 }
 
 
 
 SharedPtrToy::SharedPtrToy (const SharedPtrToy& other)
 {
-    obj = other.obj;
+    obj      = other.obj;
+    countRef = other.countRef;
+    ++(*countRef);
 }
 
 
@@ -23,23 +35,43 @@ SharedPtrToy& SharedPtrToy::operator= (const SharedPtrToy& other)
     if (this == &other)
         return *this;
     
-    if (obj != nullptr)
-        obj.reset ();
-    obj = other.obj;
+    clear ();
+
+    obj      = other.obj;
+    countRef = other.countRef;
+    ++(*countRef);
     
     return *this;
 }
 
 
 
-void SharedPtrToy::clear()
+SharedPtrToy::~SharedPtrToy ()
 {
-    obj.reset ();
+    clear ();
 }
+
+
+
+void SharedPtrToy::setObj (Toy* inToy)
+{
+    obj = inToy;
+}
+
+
+
+void SharedPtrToy::setRef (int* inCountRef)
+{
+    countRef = inCountRef;
+    *countRef = 1;
+}
+
 
 
 SharedPtrToy makeSharedPtrToy (std::string inToyName)
 {
-    SharedPtrToy tmp(inToyName);
+    SharedPtrToy tmp;
+    tmp.setObj (new Toy (inToyName));
+    tmp.setRef (new int);
     return tmp;
 }
