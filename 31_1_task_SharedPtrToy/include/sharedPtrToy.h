@@ -11,6 +11,7 @@ public:
     SharedPtrToy (const SharedPtrToy& other);
     SharedPtrToy& operator= (const SharedPtrToy& other);
     ~SharedPtrToy ();
+    
     void clear ();
 
     void setObj (Toy* inToy);
