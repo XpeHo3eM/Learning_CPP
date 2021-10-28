@@ -63,7 +63,6 @@ void SharedPtrToy::setObj (Toy* inToy)
 void SharedPtrToy::setRef (int* inCountRef)
 {
     countRef = inCountRef;
-    *countRef = 1;
 }
 
 
@@ -72,6 +71,6 @@ SharedPtrToy makeSharedPtrToy (std::string inToyName)
 {
     SharedPtrToy tmp;
     tmp.setObj (new Toy (inToyName));
-    tmp.setRef (new int);
+    tmp.setRef (new int(1));
     return tmp;
 }
