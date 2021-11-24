@@ -23,12 +23,8 @@ MatrixGraph::MatrixGraph (const IGraph& oth)
     matrix.clear ();
 
     for (const auto& vertex : oth.Vertices ())
-    {
         for (const auto& next : oth.GetNextVertices (vertex))
             AddEdge (vertex, next);
-        for (const auto& prev : oth.GetPrevVertices (vertex))
-            AddEdge (prev, vertex);
-    }
 }
 
 
