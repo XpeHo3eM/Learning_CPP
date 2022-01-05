@@ -2,13 +2,9 @@
 
 project ("32_2_task_AnalyseJSON" VERSION 1.0)
 
-set (CMAKE_CXX_STANDART 17)
- 
-set (JSON_BuildTests OFF CACHE INTERNAL "")
+#set (CMAKE_CXX_STANDART 17)
+
+set (MY_INCLUDE_PATH ${CMAKE_SOURCE_DIR}/include)
 
 add_subdirectory (nlohmann_json)
-
-add_executable (32_2_task_AnalyseJSON 
-					main.cpp	createJSON.cpp	 createJSON.h)
-
-target_link_libraries (32_2_task_AnalyseJSON PRIVATE nlohmann_json::nlohmann_json)
+add_subdirectory (src)
