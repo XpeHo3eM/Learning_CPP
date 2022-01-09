@@ -73,7 +73,7 @@ int main()
 
     std::vector <std::thread> swimThreads;
     for (int i = 0; i < amountSwimmers; ++i)
-        swimThreads.push_back (std::thread (swimmerStatus, swimmers[i], lengthLane));
+        swimThreads.emplace_back (std::thread (swimmerStatus, swimmers[i], lengthLane));
 
     for (auto& t : swimThreads)
         t.join ();
