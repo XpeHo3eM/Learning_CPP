@@ -23,7 +23,7 @@ int main()
     {
         const int compareEqual = 0;
         if (fs::is_regular_file(file) && (file.extension().compare(extension) == compareEqual))
-                std::cout << file << std::endl;
+            std::cout << file << std::endl;
     };
 
     for (const auto &f : fs::recursive_directory_iterator(path))
