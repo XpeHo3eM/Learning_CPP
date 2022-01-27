@@ -32,9 +32,9 @@ Circle::Circle(QWidget *parent)
     setParent(parent);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 
-    greenCirclePixmap   = QPixmap("D:\\Learning\\36_1_task_Qt_Circle\\circle_green.png");
-    yellowCirclePixmap  = QPixmap("D:\\Learning\\36_1_task_Qt_Circle\\circle_yellow.png");
-    redCirclePixmap     = QPixmap("D:\\Learning\\36_1_task_Qt_Circle\\circle_red.png");
+    greenCirclePixmap   = QPixmap("circle_green.png");
+    yellowCirclePixmap  = QPixmap("circle_yellow.png");
+    redCirclePixmap     = QPixmap("circle_red.png");
     currentCirclePixmap = greenCirclePixmap;
 
     setGeometry(currentCirclePixmap.rect());
