@@ -48,3 +48,32 @@
 
 8. *Наследование:*
 - [Встреча животных](https://github.com/XpeHo3eM/Learning_CPP/tree/main/29_1_task_PetsMeeting)
+
+9. *HTTP запросы:*
+- [Работа с запросами](https://github.com/XpeHo3eM/Learning_CPP/tree/main/30_1_task_UsersRequests)
+- [Захват заголовка](https://github.com/XpeHo3eM/Learning_CPP/tree/main/30_2_task_HeaderCatch)
+- [Запросы с аргументами](https://github.com/XpeHo3eM/Learning_CPP/tree/main/30_3_task_RequestsWithArguments)
+
+10. *Указатели:*
+- [Реализация shared_ptr](https://github.com/XpeHo3eM/Learning_CPP/tree/main/31_1_task_SharedPtrToy)
+- [Работа с графами](https://github.com/XpeHo3eM/Learning_CPP/tree/main/31_2_task_IGraph)
+
+11. *JSON:*
+- [Создание JSON](https://github.com/XpeHo3eM/Learning_CPP/tree/main/32_1_task_CreateJSON)
+- [Анализ данных из JSON файла](https://github.com/XpeHo3eM/Learning_CPP/tree/main/32_2_task_AnalyseJSON)
+- [Знакомство с Protobuf](https://github.com/XpeHo3eM/Learning_CPP/tree/main/32_3_task_Protobuf)
+
+12. *Исключения:*
+- [Корзина с покупками](https://github.com/XpeHo3eM/Learning_CPP/tree/main/33_1_task_ShoppingBasket)
+- [Рыбалка](https://github.com/XpeHo3eM/Learning_CPP/tree/main/33_2_task_FishCatching)
+
+13. *Шаблоны:*
+- [Реестр данных](https://github.com/XpeHo3eM/Learning_CPP/tree/main/33_3_task_ReestrOnTemplate)
+- [Среднее арифметическое](https://github.com/XpeHo3eM/Learning_CPP/tree/main/33_4_task_AverageOnArray)
+
+14. *Лямбда:*
+- [Знакоство с лямбдой](https://github.com/XpeHo3eM/Learning_CPP/tree/main/35_2_task_Lambda)
+- [Знакомство с filesystem](https://github.com/XpeHo3eM/Learning_CPP/tree/main/35_3_task_Filesystem)
+
+15. *Qt:*
+- [Цветной круг](https://github.com/XpeHo3eM/Learning_CPP/tree/main/36_1_task_Qt_Circle)
