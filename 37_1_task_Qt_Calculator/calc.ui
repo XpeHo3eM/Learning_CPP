@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>calcClass</class>
+ <widget class="QMainWindow" name="calcClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>421</width>
+    <height>231</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1677000</width>
+    <height>1677000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>calc</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTextBrowser" name="textBrowser">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::RightToLeft</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Times New Roman</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="2" column="2">
+         <widget class="QPushButton" name="bt_3">
+          <property name="text">
+           <string>3</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QPushButton" name="bt_5">
+          <property name="text">
+           <string>5</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QPushButton" name="bt_1">
+          <property name="text">
+           <string>1</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QPushButton" name="bt_6">
+          <property name="text">
+           <string>6</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="bt_2">
+          <property name="text">
+           <string>2</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QPushButton" name="bt_4">
+          <property name="text">
+           <string>4</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QPushButton" name="bt_7">
+          <property name="text">
+           <string>7</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QPushButton" name="bt_8">
+          <property name="text">
+           <string>8</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="bt_9">
+          <property name="text">
+           <string>9</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="bt_0">
+          <property name="text">
+           <string>0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QPushButton" name="bt_plus">
+          <property name="text">
+           <string>+</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QPushButton" name="bt_minus">
+          <property name="text">
+           <string>-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QPushButton" name="bt_multiply">
+          <property name="text">
+           <string>*</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="4">
+         <widget class="QPushButton" name="bt_erase">
+          <property name="text">
+           <string>&lt;-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4">
+         <widget class="QPushButton" name="bt_clear">
+          <property name="text">
+           <string>C</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="3">
+         <widget class="QPushButton" name="bt_divide">
+          <property name="text">
+           <string>/</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="4">
+         <widget class="QPushButton" name="bt_result">
+          <property name="text">
+           <string>=</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="calc.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>bt_plus</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_plus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>163</x>
+     <y>212</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_minus</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_minus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>351</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_erase</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_erase_symbol()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_clear</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_divide</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_divide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>122</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_multiply</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_multiply()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>302</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_result</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_result()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>409</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>420</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_7</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_7()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>33</x>
+     <y>168</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_8</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_8()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>245</x>
+     <y>160</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_9</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_9()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>112</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>162</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_4</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_4()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>73</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_5</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_5()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>234</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_6</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_6()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>385</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_1</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>38</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_2</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_2()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_3</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_3()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>170</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>414</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>bt_0</sender>
+   <signal>clicked()</signal>
+   <receiver>calcClass</receiver>
+   <slot>button_0()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>235</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>button_plus()</slot>
+  <slot>button_minus()</slot>
+  <slot>button_multiply()</slot>
+  <slot>button_divide()</slot>
+  <slot>button_erase_symbol()</slot>
+  <slot>button_result()</slot>
+  <slot>button_clear()</slot>
+  <slot>button_0()</slot>
+  <slot>button_1()</slot>
+  <slot>button_2()</slot>
+  <slot>button_3()</slot>
+  <slot>button_4()</slot>
+  <slot>button_5()</slot>
+  <slot>button_6()</slot>
+  <slot>button_7()</slot>
+  <slot>button_8()</slot>
+  <slot>button_9()</slot>
+ </slots>
+</ui>
