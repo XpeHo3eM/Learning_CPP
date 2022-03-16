@@ -1,15 +1,8 @@
 #include <vector>
-#include <list>
 #include <sstream>
 
 #include "calc.h"
 
-
-calc::calc(QWidget *parent)
-    : QMainWindow(parent)
-{
-    ui.setupUi(this);
-}
 
 
 void calc::button_minus()
@@ -127,7 +120,7 @@ void calc::button_result()
             buf = "";
             lineEdit->setText("");
         }
-        catch (std::exception &ex)
+        catch (...)
         {
             textBrowser->setText("Divide by zero");
         }    

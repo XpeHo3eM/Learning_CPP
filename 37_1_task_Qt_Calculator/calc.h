@@ -1,15 +1,18 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-#include "ui_calc.h"
+#include <QtWidgets/QLineEdit>
+#include <QtWidgets/QTextBrowser>
+
+
 
 class calc : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    calc(QWidget *parent = nullptr);
-    QLineEdit *lineEdit = nullptr;
+    calc(QWidget *parent = nullptr) : QMainWindow(parent) {};
+    QLineEdit    *lineEdit    = nullptr;
     QTextBrowser *textBrowser = nullptr;
 
 public slots:
@@ -32,7 +35,6 @@ public slots:
     void button_9();
 
 private:
-    Ui::calcClass ui;
     QString buf = "";
 
     bool isEnteredNumber();
