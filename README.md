@@ -77,3 +77,5 @@
 
 15. *Qt:*
 - [Цветной круг](https://github.com/XpeHo3eM/Learning_CPP/tree/main/36_1_task_Qt_Circle)
+- [Калькулятор](https://github.com/XpeHo3eM/Learning_CPP/tree/main/37_1_task_Qt_Calculator)
+- [Медиаплеер](https://github.com/XpeHo3eM/Learning_CPP/tree/main/37_2_task_Qt_QML_Mediaplayer)
